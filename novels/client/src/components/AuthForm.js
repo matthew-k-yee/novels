@@ -1,25 +1,50 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { login } from '../services/auth';
+import { Redirect } from 'react-router-dom'
 import LoginForm from './LoginForm';
 
-class AuthForm extends React.Component{
+class AuthForm extends Component{
   constructor(props){
     super(props)
-    this.state = {
+    this.state = ({
       credentials: {
-        email_account: '',
+        email: '',
         password: ''
-      }
-    }
+      },
+      redirectToProfile: false
+    })
+
     this.handleChange = this.handleChange.bind(this)
+    this.handlelogin = this.handlelogin.bind(this)
   }
 
-  handleChange(e) {
-    // const { name, value } = e.target
+  handleChange(e){
+    const { name, value } = e.target
+    this.setState(prevState => {
+      return {
+        credentials: {
+          ...prevState.credentials,
+          [name] : value
+        }
+      }
+    })
   }
 
-  render(){
+  async handlelogin(e){
+    e.preventDefault();
+    const tokenData = await login(this.state.credentials);
+    console.log(tokenData)
+    localStorage.setItem('token', tokenData.jwt);
+    this.setState({ redirectToProfile: true})
+    console.log('loggedin')
+  }
+
+  render() {
     return(
-      <LoginForm credentials={this.state.credentials} handleChange ={this.handleChange}/>
+      <LoginForm login={this.state.credentials}
+                 handleChange={this.handleChange}
+                 handlelogin={this.handlelogin}
+       />
     )
   }
 }

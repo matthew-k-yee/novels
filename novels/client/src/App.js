@@ -19,13 +19,17 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = ({
-      register: {
-        firstName: '',
-        lastName: '',
-        userName: '',
+      login: {
         email: '',
         password: ''
       }
+      // register: {
+      //   firstName: '',
+      //   lastName: '',
+      //   userName: '',
+      //   email: '',
+      //   password: ''
+      // }
     })
     // this.handleRegisterChange = this.handleRegisterChange.bind(this)
     // this.handleSubmit = this.handleSubmit.bind(this)

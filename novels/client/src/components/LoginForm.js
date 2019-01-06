@@ -1,22 +1,21 @@
 import React from 'react'
 
 function LoginForm(props) {
-  return (
-    <form>
+  return(
+    <form onSubmit={props.handlelogin}>
       <h2>Sign In</h2>
-      <h3>Email</h3>
-      <input type='text'
-             name='email_account'
-             value={props.credentials.email_account}
+      <h3>Email:</h3>
+      <input type='email'
+             name='email'
+             value={props.login.email}
              onChange={props.handleChange}/>
-      <br/>
-      <h3>Password</h3>
+      <h3>Password:</h3>
       <input type='password'
-             value={props.credentials.password}
-             onChange={props.handleChange}
-             name='password'/>
+             name='password'
+             value={props.login.password}
+             onChange={props.handleChange}/>
       <br/><br/>
-      <button type='submit'>Login</button>
+      <button>Login</button>
     </form>
   )
 }
