@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-// import LoginForm from './components/LoginForm'
-import RegisterForm from './components/RegisterForm'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import AuthForm from './components/AuthForm';
 
 
 async function getBooks() {
@@ -16,10 +19,6 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = ({
-      login: {
-        email: '',
-        password: ''
-      },
       register: {
         firstName: '',
         lastName: '',
@@ -28,33 +27,36 @@ class App extends Component {
         password: ''
       }
     })
-    this.handleRegisterChange = this.handleRegisterChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    // this.handleRegisterChange = this.handleRegisterChange.bind(this)
+    // this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleRegisterChange(e) {
-    const { name, value } = e.target
-    this.setState(prevState => {
-      return {
-        register: {
-          ...prevState.register,
-          [name]: value
-        }
-      }
-    })
-  }
+  // handleRegisterChange(e) {
+  //   const { name, value } = e.target
+  //   this.setState(prevState => {
+  //     return {
+  //       register: {
+  //         ...prevState.register,
+  //         [name]: value
+  //       }
+  //     }
+  //   })
+  // }
+  //
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  // }
 
-  handleSubmit(e) {
-
-
-  }
 
   render() {
     return (
-      <div className="App">
-        <RegisterForm register={this.state.register}
-                      handleRegisterChange={this.handleRegisterChange}/>
-      </div>
+      <Router>
+        <div className="App">
+            <NavBar />
+            <Route exact path="/" component={Home} />
+            <Route path='/signin' component={AuthForm} />
+        </div>
+      </Router>
     );
   }
 }
