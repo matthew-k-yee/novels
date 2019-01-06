@@ -12,22 +12,22 @@ User.create([
     username: "111",
     email: "111@gmail.com",
     password: "111",
-    firstname: "aaa",
-    lastname: "aaa"
+    firstname: "Bob",
+    lastname: "Smith"
   },
   {
     username: "222",
     email: "222@gmail.com",
     password: "222",
-    firstname: "bbb",
-    lastname: "bbb"
+    firstname: "Liz",
+    lastname: "Chen"
   },
   {
     username: "333",
     email: "333@gmail.com",
     password: "333",
-    firstname: "ccc",
-    lastname: "ccc"
+    firstname: "Henry",
+    lastname: "Williams"
   }
 ])
 
@@ -68,3 +68,15 @@ Book.create([
     genre_id: '2'
   }
 ])
+
+Comment.create([
+  {
+    title: 'Great read',
+    summary: 'fantasic read about being disillusioned'
+
+  },
+  {
+    title: 'sucked',
+    summary: 'trash'
+  }
+  ])
