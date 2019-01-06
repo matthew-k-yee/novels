@@ -25,7 +25,8 @@ class Profile extends Component {
     }
     return(
       <div>
-        <h1>Your Books</h1>
+        <h1>Hello!</h1>
+        <h2>Your saved books!!</h2>
         <button onClick={this.logOut}>Log Out</button>
     </div>
     )

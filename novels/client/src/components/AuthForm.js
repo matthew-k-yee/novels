@@ -13,7 +13,6 @@ class AuthForm extends Component{
       },
       redirectToProfile: false
     })
-
     this.handleChange = this.handleChange.bind(this)
     this.handlelogin = this.handlelogin.bind(this)
   }
@@ -40,11 +39,13 @@ class AuthForm extends Component{
   }
 
   render() {
+    if (this.state.redirectToProfile) return (<Redirect to="/profile"/>)
     return(
+      <div>
       <LoginForm login={this.state.credentials}
                  handleChange={this.handleChange}
-                 handlelogin={this.handlelogin}
-       />
+                 handlelogin={this.handlelogin}/>
+      </div>
     )
   }
 }
