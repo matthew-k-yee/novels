@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import AuthForm from './components/AuthForm';
+import Profile from './components/Profile';
 
 
 async function getBooks() {
@@ -58,6 +59,7 @@ class App extends Component {
         <div className="App">
             <NavBar />
             <Route exact path="/" component={Home} />
+            <Route path='/profile' component={Profile} />
             <Route path='/signin' component={AuthForm} />
         </div>
       </Router>

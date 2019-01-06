@@ -9,7 +9,7 @@ function NavBar(props){
           <Link to='/'>Home</Link>
         </li>
         <li>
-          <Link to='/mybooks'>MyBooks</Link>
+          <Link to='/profile'>MyBooks</Link>
         </li>
         <li>
           <Link to='/browse'>Browse</Link>
