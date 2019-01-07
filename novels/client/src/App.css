@@ -13,3 +13,22 @@ nav ul {
 nav li {
   padding: 15px;
 }
+
+.listgenre {
+  width: 30%;
+  height: 800px;
+  margin: 0 auto
+}
+
+.listgenre ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.listgenre li {
+  padding: 20px;
+}
