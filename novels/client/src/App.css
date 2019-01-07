@@ -32,3 +32,9 @@ nav li {
 .listgenre li {
   padding: 20px;
 }
+
+
+.bookInfo{
+  margin: 0 auto;
+  width: 80%
+}

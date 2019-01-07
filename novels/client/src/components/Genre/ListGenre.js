@@ -8,9 +8,10 @@ function ListGenre(props){
       <ul>
         {props.genres.map(genre => (
           <li key={genre.id}>
-            <Link to={`/browse/?genre_title=${genre.genre_title}`}>{genre.genre_title}</Link>
-          </li>
-        ))}
+            {/* <Link to={`/genres/${genre.id}/books`}>{genre.genre_title}</Link> */}
+            <Link to={`/genres/${genre.id}/books`}>{genre.genre_title}</Link>
+          </li>)
+        )}
       </ul>
     </div>
   )

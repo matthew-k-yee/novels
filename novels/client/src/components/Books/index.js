@@ -25,7 +25,7 @@ class Books extends Component{
         }}/> */}
         <Route exact path={`${MATCH_PATH}`} component={BookList}/>
         {/* Render the article page*/}
-        <Route exact path={`${MATCH_PATH}/:id`} component={BookFullPage}/>
+        // <Route exact path={`${MATCH_PATH}/:id`} component={BookFullPage}/>
       </Switch>
     )
   }

@@ -12,6 +12,7 @@ function BookListItem(props){
           <li key={book.id}>
             <h1><Link to={`${match.url}/${book.id}`}>{book.title}</Link></h1>
             <p>{book.author}</p>
+            <p>{book.genre_id}</p>
           </li>
         ))}
       </ul>

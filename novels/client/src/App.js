@@ -7,19 +7,24 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import AuthForm from './components/Login/AuthForm';
 import Profile from './components/Profile/Profile';
-import Browse from './components/Genre/Browse';
-// import BookList from './components/Books/BookList';
+// import Browse from './components/Genre/Browse';
+import BookList from './components/Books/BookList';
+import BookFullPage from './components/Books/BookFullPage';
 import Books from './components/Books/';
+import Genre from './components/Genre/';
+
+
+// let MATCH_PATH = '';
 
 class App extends Component {
   constructor(props){
     super(props)
+    // MATCH_PATH = props.match.path
     this.state = ({
       login: {
         email: '',
         password: ''
-      }
-      // register: {
+      }      // register: {
       //   firstName: '',
       //   lastName: '',
       //   userName: '',
@@ -55,9 +60,11 @@ class App extends Component {
             <NavBar />
             <Route exact path="/" component={Home} />
             <Route path='/profile' component={Profile} />
-            <Route path='/browse' component={Browse} />
+            {/* <Route path='/browse' component={Browse} /> */}
+            <Route path='/genres' component={Genre} />
             <Route path='/books' component={Books} />
             <Route path='/signin' component={AuthForm} />
+            {/* <Route exact path={'/genres/11/books'} component={BookFullPage}/> */}
         </div>
       </Router>
     );

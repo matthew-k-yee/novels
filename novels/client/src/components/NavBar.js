@@ -12,7 +12,7 @@ function NavBar(props){
           <Link to='/profile'>MyBooks</Link>
         </li>
         <li>
-          <Link to='/browse'>Browse</Link>
+          <Link to='/genres'>Browse</Link>
         </li>
         <li>
           <Link to='/signin'>Log In / Register</Link>

@@ -23,7 +23,7 @@ class BookFullPage extends Component{
     })
   }
   render() {
-    console.log(this.state.books)
+    // console.log(this.state.books)
     return(
       <div>
         <BookInfo books={this.state.books}/>
