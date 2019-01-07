@@ -33,10 +33,91 @@ User.create([
 
 Genre.create([
   {
-    genre_title: 'nonfiction'
+    genre_title: 'Art'
   },
   {
-    genre_title: "fiction"
+    genre_title: "Biography"
+  },
+  {
+    genre_title: 'Business'
+  },
+  {
+    genre_title: "Children's"
+  },
+  {
+    genre_title: 'Christian'
+  },
+  {
+    genre_title: 'Classics'
+  },
+  {
+    genre_title: 'Comics'
+  },
+  {
+    genre_title: 'Cookbook'
+  },
+  {
+    genre_title: 'Ebooks'
+  },
+  {
+    genre_title: 'Fantasy'
+  },
+  {
+    genre_title: 'Fiction'
+  },
+  {
+    genre_title: "Graphic Novels"
+  },
+  {
+    genre_title: 'Historical Fiction'
+  },
+  {
+    genre_title: 'History'
+  },
+  {
+    genre_title: "Horror"
+  },
+  {
+    genre_title: 'Memoir'
+  },
+  {
+    genre_title: 'Music'
+  },
+  {
+    genre_title: 'Mystery'
+  },
+  {
+    genre_title: 'Nonfuction'
+  },
+  {
+    genre_title: 'Poetry'
+  },
+  {
+    genre_title: 'Psychology'
+  },
+  {
+    genre_title: 'Romance'
+  },
+  {
+    genre_title: "Science"
+  },
+  {
+    genre_title: 'Science Fiction'
+  },
+  {
+    genre_title: "Self Help"
+  },
+  {
+    genre_title: 'Sports'
+  },
+  {
+    genre_title: 'Thriller'
+  },
+  {
+    genre_title: 'Travel'
+  },
+  {
+    genre_title: 'Young Adult'
   }
   ])
 

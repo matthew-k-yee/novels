@@ -5,16 +5,18 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
 import Home from './components/Home';
-import AuthForm from './components/AuthForm';
-import Profile from './components/Profile';
+import AuthForm from './components/Login/AuthForm';
+import Profile from './components/Profile/Profile';
+import Browse from './components/Genre/Browse';
 
 
-async function getBooks() {
-  const resp = await axios.get('/books');
-  console.log(resp.data);
-}
 
-getBooks();
+// async function getBooks() {
+//   const resp = await axios.get('/books');
+//   console.log(resp.data);
+// }
+//
+// getBooks();
 
 class App extends Component {
   constructor(props){
@@ -60,6 +62,7 @@ class App extends Component {
             <NavBar />
             <Route exact path="/" component={Home} />
             <Route path='/profile' component={Profile} />
+            <Route path='/browse' component={Browse} />
             <Route path='/signin' component={AuthForm} />
         </div>
       </Router>
