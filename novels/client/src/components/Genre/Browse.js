@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ListGenre from './ListGenre';
-// import BookList from '../Books/BookList'
 import axios from 'axios'
 
 class Browse extends Component{
@@ -29,7 +28,6 @@ class Browse extends Component{
       <div>
         <h1>Genres</h1>
         <ListGenre genres={this.state.genres}/>
-        {/* <BookList /> */}
       </div>
     )
   }

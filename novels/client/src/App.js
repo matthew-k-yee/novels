@@ -8,7 +8,8 @@ import Home from './components/Home';
 import AuthForm from './components/Login/AuthForm';
 import Profile from './components/Profile/Profile';
 import Browse from './components/Genre/Browse';
-import BookList from './components/Books/BookList';
+// import BookList from './components/Books/BookList';
+import Books from './components/Books/';
 
 class App extends Component {
   constructor(props){
@@ -55,7 +56,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path='/profile' component={Profile} />
             <Route path='/browse' component={Browse} />
-            <Route path='/books' component={BookList} />
+            <Route path='/books' component={Books} />
             <Route path='/signin' component={AuthForm} />
         </div>
       </Router>
