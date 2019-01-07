@@ -10,16 +10,6 @@ import Profile from './components/Profile/Profile';
 import Browse from './components/Genre/Browse';
 import BookList from './components/Books/BookList';
 
-
-
-
-// async function getBooks() {
-//   const resp = await axios.get('/books');
-//   console.log(resp.data);
-// }
-//
-// getBooks();
-
 class App extends Component {
   constructor(props){
     super(props)
