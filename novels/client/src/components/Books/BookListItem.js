@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, Route } from 'react-router-dom';
-import BookFullPage from './BookFullPage';
+// import BookFullPage from './BookFullPage';
 
 
 function BookListItem(props){
@@ -12,7 +12,6 @@ function BookListItem(props){
           <li key={book.id}>
             <h1><Link to={`${match.url}/${book.id}`}>{book.title}</Link></h1>
             <p>{book.author}</p>
-            <p>{book.genre_id}</p>
           </li>
         ))}
       </ul>
