@@ -17,6 +17,9 @@ function NavBar(props){
         <li>
           <Link to='/signin'>Log In / Register</Link>
         </li>
+        <li>
+          <Link to='/books'>Books</Link>
+        </li>
       </ul>
     </nav>
   )

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :genres do
-    resources :books
+    resources :books, :except => [:create]
   end
 
   post 'user_token' => 'user_token#create'

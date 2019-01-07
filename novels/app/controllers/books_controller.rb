@@ -4,8 +4,12 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = Book.all
-
+    puts params.inspect
+    if !(params[:genre_id].present?)
+      @books = Book.all
+    else
+      @books = Book.where(genre_id: params[:genre_id])
+    end
     render json: @books
   end
 
