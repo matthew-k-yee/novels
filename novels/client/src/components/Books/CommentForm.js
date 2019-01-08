@@ -4,8 +4,19 @@ function CommentForm(props){
   return(
     <div>
       <form>
-        Text:
-          <input/>
+        <label>
+          <h3>Title:</h3>
+          <input type='text'
+                 name='title'/>
+        </label>
+        <br/>
+        <label>
+            <h3>Summary:</h3>
+          <textarea type='text'
+                    name='summary'/>
+        </label>
+        <br/>
+        <button type='submit'>Post!</button>
       </form>
     </div>
   )

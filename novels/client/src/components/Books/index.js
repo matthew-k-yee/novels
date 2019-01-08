@@ -15,17 +15,8 @@ class Books extends Component{
   render(){
     return (
       <Switch>
-        {/* Render a list of articles*/}
-        {/* <Route exact path={`${MATCH_PATH}`} render={(props) => {
-          return (<BookList {...props}  />)
-        }}/> */}
-        {/* Render the article page*/}
-        {/* <Route exact path={`${MATCH_PATH}/:id`} render={(props) => {
-          return (<BookFullPage {...props} credentials={this.props.credentials} />)
-        }}/> */}
         <Route exact path={`${MATCH_PATH}`} component={BookList}/>
-        {/* Render the article page*/}
-        // <Route exact path={`${MATCH_PATH}/:id`} component={BookFullPage}/>
+        <Route exact path={`${MATCH_PATH}/:id`} component={BookFullPage}/>
       </Switch>
     )
   }

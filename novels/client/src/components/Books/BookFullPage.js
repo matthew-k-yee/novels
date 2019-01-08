@@ -27,7 +27,7 @@ class BookFullPage extends Component{
   render() {
     return(
       <div>
-        <BookInfo books={this.state.books}/>
+        <BookInfo books={this.state.books} />
         <Comments />
       </div>
     )
