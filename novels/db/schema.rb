@@ -31,8 +31,7 @@ ActiveRecord::Schema.define(version: 2019_01_08_003557) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "title"
-    t.string "summary"
+    t.string "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "book_id"
