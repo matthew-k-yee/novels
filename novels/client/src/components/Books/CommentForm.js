@@ -3,17 +3,15 @@ import React from 'react'
 function CommentForm(props){
   return(
     <div>
-      <form className='comment-form'>
+      <form className='comment-form' onSubmit={props.handleSubmit}>
         <label>
-          <h3>Title:</h3>
-          <input type='text'
-                 name='title'/>
-        </label>
-        <br/>
-        <label>
-            <h3>Comment:</h3>
+            <h3>Review:</h3>
           <textarea type='text'
-                    name='Comment'/>
+                    rows="6" cols="40"
+                    name='review'
+                    onChange={props.handleChange}
+                    value={props.review}
+                    />
         </label>
         <br/>
         <button type='submit'>Post!</button>
