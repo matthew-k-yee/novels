@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import BookInfo from './BookInfo';
-import Comments from './Comments';
+import CommentList from './CommentList'
+// import CommentForm from './Comments';
+
 
 // import { Redirect, Link } from 'react-router-dom'
 
@@ -39,7 +41,8 @@ class BookFullPage extends Component{
     return(
       <div>
         <BookInfo books={this.state.books} />
-        <Comments comments={this.state.comments} />
+        <CommentList comments={this.state.comments}/>
+        {/* <CommentForm /> */}
       </div>
     )
   }
