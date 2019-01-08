@@ -9,7 +9,6 @@ class Comments extends Component{
     this.state = ({
       users: [],
       comments: [],
-      books: [],
       // id: Number(this.props.match.params.id)
     })
   }

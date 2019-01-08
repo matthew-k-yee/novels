@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom';
 import Browse from './Browse'
 import ListGenre from './ListGenre'
-// import BookList from '../Books/BookList'
-// import BookListItem from '../Books/BookListItem'
 import FilteredGenre from './FilteredGenre'
 
 
@@ -21,7 +19,6 @@ class Genre extends Component {
     return(
       <Switch>
         <Route exact path={`${MATCH_PATH}`} component={Browse} />
-        {/* // <Route path={`${MATCH_PATH}/:id/books`} render={() => 'Hello, world!'}/> */}
         <Route path={`${MATCH_PATH}/:id/books`} component={FilteredGenre}/>
       </Switch>
     )

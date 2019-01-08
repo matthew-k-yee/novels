@@ -16,7 +16,7 @@ class Books extends Component{
     return (
       <Switch>
         <Route exact path={`${MATCH_PATH}`} component={BookList}/>
-        <Route exact path={`${MATCH_PATH}/:id`} component={BookFullPage}/>
+        <Route exact path={`${MATCH_PATH}/:id/`} component={BookFullPage}/>
       </Switch>
     )
   }

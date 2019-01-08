@@ -10,12 +10,14 @@ class BookFullPage extends Component{
     super(props)
     this.state = ({
       id: Number(this.props.match.params.id),
-      books: []
+      books: [],
+      comments: []
     })
 }
 
   async componentDidMount(){
     await this.getBooks()
+    await this.getComment();
   }
 
   async getBooks() {
@@ -24,11 +26,20 @@ class BookFullPage extends Component{
       books: resp.data
     })
   }
+
+  async getComment(){
+    const resp = await axios.get(`/books/${this.state.id}/comments`)
+    this.setState({
+      comments: resp.data
+    })
+  }
+
   render() {
+    console.log(this.state.comments)
     return(
       <div>
         <BookInfo books={this.state.books} />
-        <Comments books={this.state.books} />
+        <Comments comments={this.state.comments} />
       </div>
     )
   }

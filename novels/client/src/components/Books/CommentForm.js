@@ -11,9 +11,9 @@ function CommentForm(props){
         </label>
         <br/>
         <label>
-            <h3>Summary:</h3>
+            <h3>Comment:</h3>
           <textarea type='text'
-                    name='summary'/>
+                    name='Comment'/>
         </label>
         <br/>
         <button type='submit'>Post!</button>
