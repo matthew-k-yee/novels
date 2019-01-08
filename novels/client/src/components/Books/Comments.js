@@ -3,14 +3,14 @@ import axios from 'axios'
 import CommentForm from './CommentForm'
 import CommentList from './CommentList'
 
-
 class Comments extends Component{
   constructor(props){
     super(props)
     this.state = ({
       users: [],
       comments: [],
-      books: []      
+      books: [],
+      // id: Number(this.props.match.params.id)
     })
   }
 
@@ -18,7 +18,7 @@ class Comments extends Component{
     return(
       <div>
         <h3>Community Reviews</h3>
-        <CommentList />
+        <CommentList/>
         <CommentForm />
       </div>
     )

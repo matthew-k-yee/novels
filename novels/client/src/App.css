@@ -38,3 +38,10 @@ nav li {
   margin: 0 auto;
   width: 80%
 }
+
+.comment-form{
+  border: 1px solid black;
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}

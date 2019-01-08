@@ -3,7 +3,7 @@ import React from 'react'
 function CommentForm(props){
   return(
     <div>
-      <form>
+      <form className='comment-form'>
         <label>
           <h3>Title:</h3>
           <input type='text'

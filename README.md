@@ -14,4 +14,9 @@ https://github.com/matthew-k-yee/novels/projects/1
 ## List of Dependencies / Technologies Back-End
 
 ## Run Front-end and Back-End
-Rails Start
+clone project
+rails db:drop db:create db:migrate db:seed
+npm i
+CD into client
+npm i
+rails start
