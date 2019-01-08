@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_06_002542) do
+ActiveRecord::Schema.define(version: 2019_01_08_003557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,21 +25,20 @@ ActiveRecord::Schema.define(version: 2019_01_06_002542) do
     t.index ["genre_id"], name: "index_books_on_genre_id"
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.string "title"
-    t.text "summary"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "books_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "favorited_type"
-    t.bigint "favorited_id"
+  create_table "comments", force: :cascade do |t|
+    t.string "title"
+    t.string "summary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["favorited_type", "favorited_id"], name: "index_favorites_on_favorited_type_and_favorited_id"
-    t.index ["user_id"], name: "index_favorites_on_user_id"
+    t.bigint "book_id"
+    t.bigint "user_id"
+    t.index ["book_id"], name: "index_comments_on_book_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -59,5 +58,6 @@ ActiveRecord::Schema.define(version: 2019_01_06_002542) do
   end
 
   add_foreign_key "books", "genres"
-  add_foreign_key "favorites", "users"
+  add_foreign_key "comments", "books"
+  add_foreign_key "comments", "users"
 end

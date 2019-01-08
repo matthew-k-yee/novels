@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create([
+users = User.create([
   {
     username: "111",
     email: "111@gmail.com",
@@ -30,6 +30,8 @@ User.create([
     lastname: "Williams"
   }
 ])
+
+
 
 Genre.create([
   {
@@ -153,11 +155,14 @@ Book.create([
 Comment.create([
   {
     title: 'Great read',
-    summary: 'fantasic read about being disillusioned'
-
+    summary: 'fantasic read about being disillusioned',
+    book_id: '1',
+		user_id: '1'
   },
   {
     title: 'sucked',
-    summary: 'trash'
+    summary: 'trash',
+    book_id: '4',
+    user_id: '2'
   }
   ])

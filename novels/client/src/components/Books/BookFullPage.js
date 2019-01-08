@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import BookInfo from './BookInfo';
+import Comments from './Comments';
+
 // import { Redirect, Link } from 'react-router-dom'
 
 class BookFullPage extends Component{
@@ -23,10 +25,10 @@ class BookFullPage extends Component{
     })
   }
   render() {
-    // console.log(this.state.books)
     return(
       <div>
         <BookInfo books={this.state.books}/>
+        <Comments />
       </div>
     )
   }

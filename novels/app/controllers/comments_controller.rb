@@ -1,10 +1,15 @@
 class CommentsController < ApplicationController
-  before_action :find_commentable
   before_action :set_comment, only: [:show, :update, :destroy]
 
   # GET /comments
   def index
-    @comments = Comment.all
+    # @comments = Comment.all
+    puts params.inspect
+    if !(params[:book_id].present?)
+      @comments = Comment.all
+    else
+      @comments = Comment.where(book_id: params[:book_id])
+    end
 
     render json: @comments
   end
@@ -16,7 +21,7 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
-    @comment = Comments.new(comment_params)
+    @comment = Comment.new(comment_params)
 
     if @comment.save
       render json: @comment, status: :created, location: @comment
@@ -47,11 +52,6 @@ class CommentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def comment_params
-      params.require(:comment).permit(:title, :text)
+      params.require(:comment).permit(:title, :text, :user_id, :book_id)
     end
-
-    # def find_commentable
-    #   @commentable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
-    #   @commentable = Book.find_by_id(params[:book_id]) if params[:book_id]
-    # end
 end
