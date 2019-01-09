@@ -16,7 +16,7 @@ class BookFullPage extends Component {
         review: ''
       },
       editID: 0,
-      updatedComment: []
+      updatedComment: ""
     }
   }
   componentDidMount = async () => {
@@ -111,25 +111,58 @@ class BookFullPage extends Component {
     console.log(id)
   }
 
-  handleUpdate = async (id) => {
+  handleUpdate = async (e, id,index) => {
+    e.preventDefault();
     const token = localStorage.getItem('token');
-    const resp = await axios.put(`/books/${this.state.id}/comments/${id}`, {
-      comment: {
-        review: this.state.comments.review,
-        book_id: this.state.id,
-        user_id: this.state.comments.user_id
-      }
-    }, {
+  const  URL = `/books/${this.state.id}/comments/${id.id}`
+    // const resp = await axios.put(`/books/${this.state.id}/comments/${id.id}`, {
+    //   comment: {
+    //     review: id.review,
+    //     book_id: id.id,
+    //     user_id: id.user_id
+    //   }
+    // }, {
+    //   headers: {
+    //     Authorization: `Bearer ${token}`
+    //   }
+    // })
+    const resp = await axios({
+      method: 'put',
+      url: URL,
       headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
+          Authorization: `Bearer ${token}`,
+        },
+        data: {comment: {
+            review: id.review,
+            book_id: id.id,
+            user_id: id.user_id
+          }},
+    });
     this.setState(prevState => {
       return {
         ...prevState.comments
       }
     })
     console.log(resp.data)
+  }
+
+  // handleCommentSubmit = async (e) => {
+  //   e.preventDefault();
+  //   await this.addComment(this.state.updatedComment)
+  // }
+
+  handleCommentChange = (e,index) => {
+    const { value } = e.target
+  //  if( this.comments && this.comments[index]){
+  const comments = this.state.comments
+    comments[index]["review"] = value;
+//  }
+    this.setState(prevState => {
+      return {
+         comments: comments
+        }
+      }
+    )
   }
 
   // favorites
@@ -145,7 +178,7 @@ class BookFullPage extends Component {
                    handleDelete={this.handleDelete}
                    handleUpdate={this.handleUpdate}
                    toggleState={this.toggleState}
-                   SubmitNewComment={this.submitNewComment}
+                   handleCommentChange={this.handleCommentChange}
                    editID={this.state.editID}
                    updatedComment={this.state.updatedComment}/>
 

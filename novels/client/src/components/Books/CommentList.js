@@ -2,21 +2,23 @@ import React from 'react'
 
 
 function CommentList(props){
+  const review =  props.comments.review
   return(
     <div>
       <h2>COMMUNITY REVIEWS</h2>
-      {props.comments.map(comment => (
+      {props.comments.map((comment, index) => (
         <div className='comment-list' key={comment.id}>
           <p>{comment.review}</p>
             {
             props.editID === comment.id ?
-            <form>
+            <form >
               <textarea type='text'
                         rows="6" cols="40"
-                        name='updatedComment'
-                        value = {props.updatedComment}
+                        name='review'
+                        value = {review}
+                        onChange={(e) => props.handleCommentChange(e, index)}
                         />
-              <button onClick={() => {props.handleUpdate(comment.id)}}>Submit</button>
+              <button onClick={(e) => {props.handleUpdate(e,comment,index)}}>Submit</button>
             </form>
             :
             <button onClick={()=> {props.toggleState(comment.id)}}
