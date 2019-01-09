@@ -16,13 +16,12 @@ class BookFullPage extends Component {
         review: ''
       },
       editID: 0,
-      updatedComment: ""
-    }
+      favorites: []
+     }
   }
   componentDidMount = async () => {
     await this.getBooks()
     await this.getComment();
-    await this.getUsers();
   }
 
   getBooks = async () => {
@@ -33,11 +32,6 @@ class BookFullPage extends Component {
   getComment = async () => {
     const resp = await axios.get(`/books/${this.state.id}/comments`)
     this.setState({comments: resp.data})
-  }
-
-  getUsers = async () => {
-    const resp = await axios.get(`/users`)
-    this.setState({users: resp.data})
   }
 
   handleDelete = async (id) => {
@@ -84,16 +78,12 @@ class BookFullPage extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(this.state.newReview.review)
     await this.addComment(this.state.newReview.review)
   }
 
   // delete
   handleDelete = async (id) => {
-    console.log(this.state.users)
-    console.log(this.state.comments)
     const token = localStorage.getItem('token');
-    console.log(token)
     const resp = await axios.delete(`/books/${this.state.id}/comments/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`
@@ -108,7 +98,6 @@ class BookFullPage extends Component {
 
   toggleState = (id) => {
     this.setState({editID: id})
-    console.log(id)
   }
 
   handleUpdate = async (e, id, index) => {
@@ -127,20 +116,12 @@ class BookFullPage extends Component {
         ...prevState.comments
       }
     })
-    console.log(resp)
   }
-
-  // handleCommentSubmit = async (e) => {
-  //   e.preventDefault();
-  //   await this.addComment(this.state.updatedComment)
-  // }
 
   handleCommentChange = (e,index) => {
     const { value } = e.target
-  //  if( this.comments && this.comments[index]){
   const comments = this.state.comments
     comments[index]["review"] = value;
-//  }
     this.setState(prevState => {
       return {
          comments: comments
@@ -150,25 +131,35 @@ class BookFullPage extends Component {
   }
 
   // favorites
-  addtoFav = (e) => {
+  addToFavorites = async (e) => {
     console.log('add')
+    console.log(this.state.books)
+    let favorites = this.state.favorites
+    favorites.push({
+      books: this.state.books.title
+    })
+    this.setState({
+      favorites: favorites
+    })
+    console.log(favorites)
   }
 
   render() {
-    return (<div>
-      <BookInfo books={this.state.books} addtoFav={this.addtoFav}/>
+    return (
+      <div>
+        <BookInfo books={this.state.books} addToFavorites={this.addToFavorites}/>
 
-      <CommentList comments={this.state.comments}
-                   handleDelete={this.handleDelete}
-                   handleUpdate={this.handleUpdate}
-                   toggleState={this.toggleState}
-                   handleCommentChange={this.handleCommentChange}
-                   editID={this.state.editID}
-                   updatedComment={this.state.updatedComment}/>
+        <CommentList comments={this.state.comments}
+                     handleDelete={this.handleDelete}
+                     handleUpdate={this.handleUpdate}
+                     toggleState={this.toggleState}
+                     handleCommentChange={this.handleCommentChange}
+                     editID={this.state.editID}
+                     updatedComment={this.state.updatedComment}/>
 
-      <CommentForm handleChange={this.handleChange}
-                   handleSubmit={this.handleSubmit}
-                   review={this.state.newReview.review}/>
+        <CommentForm handleChange={this.handleChange}
+                     handleSubmit={this.handleSubmit}
+                     review={this.state.newReview.review}/>
     </div>)
   }
 }

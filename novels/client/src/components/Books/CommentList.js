@@ -24,9 +24,7 @@ function CommentList(props){
               }}>Submit</button>
             </form>
             :
-            <button onClick={()=> {props.toggleState(comment.id)}}
-
-            >Edit</button>
+            <button onClick={()=> {props.toggleState(comment.id)}}>Edit</button>
           }
           <button onClick={() => {props.handleDelete(comment.id)}}>Delete</button>
         </div>

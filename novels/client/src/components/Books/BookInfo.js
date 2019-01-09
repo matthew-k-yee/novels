@@ -6,7 +6,7 @@ function BookInfo(props){
       <div className='bookInfo' key={props.books.id}>
         <h1>{props.books.title}</h1>
         <p>{props.books.summary}</p>
-        <button>Add to Favorites</button>
+        <button onClick={()=>{props.addToFavorites(props.book_id)}}>Add to Favorites</button>
       </div>
     </div>
   )

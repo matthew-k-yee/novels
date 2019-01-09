@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-// import { getMyBooks } from '../../services/post'
 
 class Profile extends Component {
   constructor(props){
