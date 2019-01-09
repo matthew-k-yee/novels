@@ -18,7 +18,10 @@ function CommentList(props){
                         value = {review}
                         onChange={(e) => props.handleCommentChange(e, index)}
                         />
-              <button onClick={(e) => {props.handleUpdate(e,comment,index)}}>Submit</button>
+              <button onClick={(e) => {
+                props.handleUpdate(e,comment,index);
+                props.toggleState(0);
+              }}>Submit</button>
             </form>
             :
             <button onClick={()=> {props.toggleState(comment.id)}}

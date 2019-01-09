@@ -111,39 +111,23 @@ class BookFullPage extends Component {
     console.log(id)
   }
 
-  handleUpdate = async (e, id,index) => {
+  handleUpdate = async (e, id, index) => {
     e.preventDefault();
     const token = localStorage.getItem('token');
-  const  URL = `/books/${this.state.id}/comments/${id.id}`
-    // const resp = await axios.put(`/books/${this.state.id}/comments/${id.id}`, {
-    //   comment: {
-    //     review: id.review,
-    //     book_id: id.id,
-    //     user_id: id.user_id
-    //   }
-    // }, {
-    //   headers: {
-    //     Authorization: `Bearer ${token}`
-    //   }
-    // })
-    const resp = await axios({
-      method: 'put',
-      url: URL,
+    const resp = await axios.put(`/books/${this.state.id}/comments/${id.id}`, {comment: {
+        review: id.review,
+        book_id: this.state.id,
+      }}, {
       headers: {
           Authorization: `Bearer ${token}`,
-        },
-        data: {comment: {
-            review: id.review,
-            book_id: id.id,
-            user_id: id.user_id
-          }},
+        }
     });
     this.setState(prevState => {
       return {
         ...prevState.comments
       }
     })
-    console.log(resp.data)
+    console.log(resp)
   }
 
   // handleCommentSubmit = async (e) => {

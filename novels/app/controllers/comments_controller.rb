@@ -35,6 +35,8 @@ class CommentsController < ApplicationController
 
   # PATCH/PUT /comments/1
   def update
+    @comment = Comment.find(params[:id])
+    
     if @comment.update(comment_params)
       render json: @comment
     else
