@@ -6,8 +6,6 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import AuthForm from './components/Login/AuthForm';
 import Profile from './components/Profile/Profile';
-import BookList from './components/Books/BookList';
-import BookFullPage from './components/Books/BookFullPage';
 import Books from './components/Books/';
 import Genre from './components/Genre/';
 
@@ -19,34 +17,9 @@ class App extends Component {
       login: {
         email: '',
         password: ''
-      }      // register: {
-      //   firstName: '',
-      //   lastName: '',
-      //   userName: '',
-      //   email: '',
-      //   password: ''
-      // }
+      }
     })
-    // this.handleRegisterChange = this.handleRegisterChange.bind(this)
-    // this.handleSubmit = this.handleSubmit.bind(this)
   }
-
-  // handleRegisterChange(e) {
-  //   const { name, value } = e.target
-  //   this.setState(prevState => {
-  //     return {
-  //       register: {
-  //         ...prevState.register,
-  //         [name]: value
-  //       }
-  //     }
-  //   })
-  // }
-  //
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  // }
-
 
   render() {
     return (

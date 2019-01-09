@@ -17,6 +17,7 @@ class Profile extends Component {
     this.setState({
       redirectToAuth: true
     })
+    console.log('logged out')
   }
 
   render() {

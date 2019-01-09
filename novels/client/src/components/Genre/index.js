@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom';
 import Browse from './Browse'
-import ListGenre from './ListGenre'
 import FilteredGenre from './FilteredGenre'
 
 

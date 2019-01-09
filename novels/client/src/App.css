@@ -45,3 +45,15 @@ nav li {
   margin: 0 auto;
   padding-bottom: 50px;
 }
+
+.comment-list {
+  border: 1px solid black;
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* .comment-list p {
+  border: 1px solid black;
+  height: 100px;
+  padding-top: 20px;
+} */

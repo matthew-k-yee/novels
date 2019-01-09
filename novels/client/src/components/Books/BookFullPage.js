@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
-// import { login } from '../../services/auth';
 import axios from 'axios'
 import BookInfo from './BookInfo';
 import CommentList from './CommentList'
 import CommentForm from './CommentForm';
-
-
-// import { Redirect, Link } from 'react-router-dom'
 
 class BookFullPage extends Component{
   constructor(props){
@@ -20,30 +16,40 @@ class BookFullPage extends Component{
       }
     }
 }
-
-  async componentDidMount(){
+   componentDidMount = async() =>{
     await this.getBooks()
     await this.getComment();
+    await this.getReviews();
   }
 
-  async getBooks() {
+  getBooks = async() => {
     const resp = await axios.get(`/books/${this.state.id}`);
     this.setState({
       books: resp.data
     })
   }
 
-  async getComment(){
+  getComment = async() => {
     const resp = await axios.get(`/books/${this.state.id}/comments`)
     this.setState({
       comments: resp.data
     })
   }
 
-  async addComment() {
+  getReviews = async () =>{
+    const resp = await axios.get(`/comments`)
+    this.setState({
+      review: resp.data
+    })
+  }
+
+  handleDelete = async(id) => {
+    console.log(`Deleting class with an id ${id}`);
+  }
+
+  addComment = async()=> {
     const token = localStorage.getItem('token');
-    console.log(token)
-    const resp = await axios.post(`/books/${this.state.id}/comments`,
+    const resp = await axios.post(`/books/${this.state.id}/comments/`,
       {comment:
         {review: this.state.newReview.review,
         book_id: this.state.id}} ,
@@ -51,7 +57,6 @@ class BookFullPage extends Component{
         Authorization: `Bearer ${token}`
       }
     })
-
     const comment = resp.data
     this.setState(prevState => {
       return {
@@ -81,12 +86,38 @@ class BookFullPage extends Component{
     await this.addComment(this.state.newReview.review)
   }
 
+// delete
+   handleDelete = async(id) => {
+     console.log(this.state.comments)
+     const token = localStorage.getItem('token');
+     const resp = await axios.delete(`/books/${this.state.id}/comments/${id}`,
+       {headers: {
+         Authorization: `Bearer ${token}`
+       }
+     })
+     this.setState(prevState => {
+       return {
+         comments:  prevState.comments.filter(c => c.id !== id)
+       }
+     })
+  }
+
+//editable
+  // toggleItemEditing = index => {
+  //
+  // }
+
+//favorites
+// addtoFav = (e) => {
+//
+// }
+
   render() {
-    console.log(this.state.comments)
     return(
       <div>
-        <BookInfo books={this.state.books} />
-        <CommentList comments={this.state.comments}/>
+        <BookInfo books={this.state.books} addtoFav={this.addtoFav} />
+        <CommentList comments={this.state.comments}
+                     handleDelete={this.handleDelete}/>
         <CommentForm handleChange={this.handleChange}
                      handleSubmit={this.handleSubmit}
                      review={this.state.newReview.review}
