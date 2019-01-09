@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function CommentList(props){
   return(
     <div>
@@ -7,6 +8,21 @@ function CommentList(props){
       {props.comments.map(comment => (
         <div className='comment-list' key={comment.id}>
           <p>{comment.review}</p>
+            {
+            props.editID === comment.id ?
+            <form>
+              <textarea type='text'
+                        rows="6" cols="40"
+                        name='updatedComment'
+                        value = {props.updatedComment}
+                        />
+              <button onClick={() => {props.handleUpdate(comment.id)}}>Submit</button>
+            </form>
+            :
+            <button onClick={()=> {props.toggleState(comment.id)}}
+
+            >Edit</button>
+          }
           <button onClick={() => {props.handleDelete(comment.id)}}>Delete</button>
         </div>
       ))}
@@ -14,40 +30,3 @@ function CommentList(props){
   )
 }
 export default CommentList
-
-
-// deleteButton = async (id,index) => {
-//     let comments = this.state.data.comments.filter((item) => item.id !== id);
-//     comments = this.makeEditabler(comments);
-//
-//     const resp = await axios.delete(
-//       `${this.props.server_url}/comments/${id}`
-//     );
-//     this.setState(
-//       prevState => {
-//         return {
-//           data: {
-//             ...prevState.data,
-//             comments: comments,
-//           }
-//         }
-//       }
-//     );
-//
-//   }
-//
-//   const deleteButton = item.editable
-//     ? <div className="comment-delete-button-div">
-//       <button className="comment-delete-button"
-//         type='button'
-//         onClick={ () => this.deleteButton(item.id,index)}>
-//         delete
-//       </button>
-//      </div>
-//     : <div className="comment-delete-button-div">
-//       <button className="comment-delete-button"
-//         type='button'
-//         >
-//         delete
-//       </button>
-//     </div>
