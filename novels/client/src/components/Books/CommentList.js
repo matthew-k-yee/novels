@@ -5,7 +5,7 @@ function CommentList(props){
   const review =  props.comments.review
   return(
     <div>
-      <h2>COMMUNITY REVIEWS</h2>
+      <h2 className='review-title'>COMMUNITY REVIEWS</h2>
       {props.comments.map((comment, index) => (
         <div className='comment-list' key={comment.id}>
           <p>{comment.review}</p>

@@ -148,6 +148,7 @@ class BookFullPage extends Component {
     return (
       <div>
         <BookInfo books={this.state.books} addToFavorites={this.addToFavorites}/>
+        <div className='reviews'>
 
         <CommentList comments={this.state.comments}
                      handleDelete={this.handleDelete}
@@ -160,6 +161,7 @@ class BookFullPage extends Component {
         <CommentForm handleChange={this.handleChange}
                      handleSubmit={this.handleSubmit}
                      review={this.state.newReview.review}/>
+       </div>
     </div>)
   }
 }

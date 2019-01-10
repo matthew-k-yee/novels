@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Shrikhand');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 
 .App {
   text-align: center;
@@ -84,7 +86,23 @@ nav li {
 
 .bookInfo{
   margin: 0 auto;
-  width: 80%
+  width: 90vh;
+  background: white;
+  opacity: .7;
+  height: 35vh;
+}
+
+.bookInFo-title{
+  font-family: 'Shrikhand', cursive;
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+  color: white;
+  font-size: 10vh;
+  font-weight: bold;
+}
+
+.bookInfo-summary{
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
 }
 
 .comment-form{
@@ -98,6 +116,7 @@ nav li {
   border: 1px solid black;
   width: 60%;
   margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .profile{
@@ -171,19 +190,24 @@ nav li {
   font-size: 8vh;
 }
 
-/* .bookList ul {
-  border-bottom: 1px solid black;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-} */
-
 .bookList ul{
   list-style: none
 }
 
 .bookList a:visited{
   color: white
+}
+
+.reviews{
+  background: white;
+  width: 90vh;
+  margin: 0 auto;
+  opacity: .7
+}
+
+.review-title{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 2.5vh;
+  padding-top: 20px;
 }
