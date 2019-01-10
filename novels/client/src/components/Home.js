@@ -3,9 +3,8 @@ import React from 'react'
 function Home(props){
   return(
     <div className='home'>
-      <h1>NOVELS</h1>
-      <hr />
-      <h1>not a copy of GoodReads</h1>
+      <h1 className='home-title'>NOVELS</h1>
+      <h1 className='home-body'>not a copy of GoodReads</h1>
     </div>
   )
 }

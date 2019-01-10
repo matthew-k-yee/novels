@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function BookListItem(props){
   const match = props.match
   return(
-    <div>
+    <div className='bookList'>
       <ul>
         {props.books.map(book => (
           <li key={book.id}>

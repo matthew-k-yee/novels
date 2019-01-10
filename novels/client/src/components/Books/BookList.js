@@ -24,7 +24,7 @@ class BookList extends Component {
   render() {
     return(
       <div>
-        <h1>Books</h1>
+        <h1 className='book-title'>Books</h1>
         <BookListItem books={this.state.books} match={this.props.match}/>
       </div>
     )

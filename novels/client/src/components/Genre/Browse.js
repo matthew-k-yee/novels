@@ -26,7 +26,7 @@ class Browse extends Component{
     console.log(this.state)
     return(
       <div>
-        <h1>Genres</h1>
+        <h1 className='genre-title'>Genres</h1>
         <ListGenre genres={this.state.genres}/>
       </div>
     )

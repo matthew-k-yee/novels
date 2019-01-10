@@ -24,7 +24,7 @@ class Profile extends Component {
       return (<Redirect to="/signin" />)
     }
     return(
-      <div>
+      <div className='profile'>
         <h1>Hello!</h1>
         <h2>Your saved books!!</h2>
         <button onClick={this.logOut}>Log Out</button>

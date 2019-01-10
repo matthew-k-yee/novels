@@ -41,7 +41,7 @@ class AuthForm extends Component{
   render() {
     if (this.state.redirectToProfile) return (<Redirect to="/profile"/>)
     return(
-      <div>
+      <div className='login-container'>
       <LoginForm login={this.state.credentials}
                  handleChange={this.handleChange}
                  handlelogin={this.handlelogin}/>
