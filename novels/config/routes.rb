@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'user_token' => 'user_token#create'
 
   resources :users do
-    resources :favorite_books, only: [:index, :create, :destroy]
+    resources :favorite_books
   end
 
   resources :books do

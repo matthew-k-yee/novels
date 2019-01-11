@@ -23,7 +23,6 @@ class Browse extends Component{
 
 
   render() {
-    console.log(this.state)
     return(
       <div>
         <h1 className='genre-title'>Genres</h1>

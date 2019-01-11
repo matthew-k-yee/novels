@@ -191,7 +191,7 @@ nav li {
 }
 
 .bookList ul{
-  list-style: none
+  list-style: none;
 }
 
 .bookList a:visited{
@@ -210,4 +210,17 @@ nav li {
   text-transform: uppercase;
   font-size: 2.5vh;
   padding-top: 20px;
+}
+
+/* .filtered-list{
+  bottom: 10px;
+  background:red
+} */
+
+.filtered-list a:visited{
+  color:white
+}
+
+
+.genre-list{
 }

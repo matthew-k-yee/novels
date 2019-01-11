@@ -81,7 +81,6 @@ class BookFullPage extends Component {
     await this.addComment(this.state.newReview.review)
   }
 
-  // delete
   handleDelete = async (id) => {
     const token = localStorage.getItem('token');
     const resp = await axios.delete(`/books/${this.state.id}/comments/${id}`, {
@@ -130,7 +129,6 @@ class BookFullPage extends Component {
     )
   }
 
-  // favorites
   addToFavorites = async (e) => {
     console.log('add')
     console.log(this.state.books)

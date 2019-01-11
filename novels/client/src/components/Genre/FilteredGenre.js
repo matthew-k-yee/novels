@@ -24,7 +24,6 @@ class FilteredGenre extends Component{
 
 
   render() {
-    console.log(this.state.genres)
     return(
       <div>
         <FilteredGenreList genres={this.state.genres}/>
