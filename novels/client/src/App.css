@@ -251,15 +251,6 @@ nav li a:visited{
   color:white
 }
 
-/* .book-covers-container{
-  width: 300px;
-  height: 500px;
-} */
-
-img.book-covers{
-  height: 393px;
-}
-
-.genre-list {
-  margin-top: 10px;
+.book-covers{
+  height: 300px;
 }
