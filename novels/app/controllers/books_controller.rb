@@ -22,21 +22,31 @@ class BooksController < ApplicationController
 
   # POST /books
   def create
-    @book = Book.new(book_params)
 
-    if @book.save
-      render json: @book, status: :created, location: @book
-    else
-      render json: @book.errors, status: :unprocessable_entity
-    end
+      @book = Book.new(book_params)
+
+      if @book.save
+        render json: @book, status: :created, location: @book
+      else
+        render json: @book.errors, status: :unprocessable_entity
+      end
   end
 
   # PATCH/PUT /books/1
   def update
-    if @book.update(book_params)
-      render json: @book
+    if params[:user_id].present?
+      @fav_book = Book.find(params[:id])
+      if current_user.books << @fav_book
+        render json: @fav_book
+      else
+        render json: @fav_book.errors, status: :unprocessable_entity
+      end
     else
-      render json: @book.errors, status: :unprocessable_entity
+      if @book.update(book_params)
+        render json: @book
+      else
+        render json: @book.errors, status: :unprocessable_entity
+      end
     end
   end
 
