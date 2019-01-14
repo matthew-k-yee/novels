@@ -43,3 +43,5 @@ npm i
 CD into client  
 npm i  
 rails start
+
+## MVP

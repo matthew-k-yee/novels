@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_14_184720) do
+ActiveRecord::Schema.define(version: 2019_01_14_203134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2019_01_14_184720) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "favorite_books", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_favorite_books_on_book_id"
+    t.index ["user_id"], name: "index_favorite_books_on_user_id"
+  end
+
   create_table "genres", force: :cascade do |t|
     t.string "genre_title"
     t.datetime "created_at", null: false
@@ -55,4 +64,6 @@ ActiveRecord::Schema.define(version: 2019_01_14_184720) do
   add_foreign_key "books", "genres"
   add_foreign_key "comments", "books"
   add_foreign_key "comments", "users"
+  add_foreign_key "favorite_books", "books"
+  add_foreign_key "favorite_books", "users"
 end

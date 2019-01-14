@@ -3,8 +3,9 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :comments
-  has_and_belongs_to_many :books
-  has_many :favorites
+  # has_and_belongs_to_many :books
+  has_many :books
+  has_many :favorite_books
 
   def to_token_payload
       {

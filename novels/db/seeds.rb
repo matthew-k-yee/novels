@@ -153,6 +153,34 @@ Book.create([
     summary: "A Game of Thrones is the first novel in A Song of Ice and Fire, a series of fantasy novels by American author George R. R. Martin. It was first published on August 1, 1996. The novel won the 1997 Locus Awardand was nominated for both the 1997 Nebula Award and the 1997 World Fantasy Award.",
     genre_id: '10',
     image: "https://upload.wikimedia.org/wikipedia/en/9/93/AGameOfThrones.jpg"
+  },
+  {
+    title: "The Sun and Her Flowers",
+    author: "Rupi Kaur",
+    summary: "The Sun and Her Flowers is Rupi Kaur's second collection of poetry, published in 2017. It is composed of five chapters, with illustrations by the author.",
+    genre_id: '20',
+    image: "https://upload.wikimedia.org/wikipedia/en/4/48/The_Sun_and_Her_Flowers_book_cover.jpg"
+  },
+  {
+    title: "The First Lady",
+    author: "James Patterson, Brendan DuBois",
+    summary: "President Tucker is caught up in a media firestorm. The scandal of his affair has sent shockwaves through his re-election campaign, and threatens to derail everything he has worked for. To win the vote, he needs the First Lady to stand by his side.",
+    genre_id: '18',
+    image: "https://images.gr-assets.com/books/1535015989l/40242245.jpg"
+  },
+  {
+    title: "When Breath Becomes Air",
+    author: "Paul Kalanithi",
+    summary: "When Breath Becomes Air is a non-fiction autobiographical book written by Paul Kalanithi. It is a memoir about his life and illness, battling stage IV metastatic lung cancer.",
+    genre_id: '19',
+    image: "https://upload.wikimedia.org/wikipedia/en/d/dd/When_Breath_Becomes_Air.jpg"
+  },
+  {
+    title: "Of Blood and Bone",
+    author: "Nora Roberts ",
+    summary: "The Sun and Her Flowers is Rupi Kaur's second collection of poetry, published in 2017. It is composed of five chapters, with illustrations by the author.",
+    genre_id: '24',
+    image: "https://images.gr-assets.com/books/1525898215l/37638128.jpg"
   }
 ])
 

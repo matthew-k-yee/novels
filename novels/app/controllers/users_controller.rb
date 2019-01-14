@@ -39,20 +39,20 @@ class UsersController < ApplicationController
   end
 
 # favorite
- # def favorite(book)
- #   self.favorites.create!(book_id: book.id)
- # end
- #
- # def unfavorite(book)
- #   favorite = self.favorites.find_by_book_id(book.id)
- #   favorite.destroy!
- #
- #   article.reload
- #  end
- #
- #  def favorited?(book)
- #      self.favorites.find_by_book_id(book.id)
- #  end
+ def favorite(book)
+   current_user.favorites.create!(book_id: book.id)
+ end
+
+ def unfavorite(book)
+   favorite = current_user.favorites.find_by_book_id(book.id)
+   favorite.destroy!
+
+   article.reload
+  end
+
+  def favorited?(book)
+      self.favorites.find_by_book_id(book.id)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
