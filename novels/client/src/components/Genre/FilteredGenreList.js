@@ -7,8 +7,7 @@ function FilteredGenreList(props){
       <ul>
         {props.genres.map(book => (
           <div className='genre-list' key={book.id}>
-            <h1><Link to={`/books/${book.id}`}>{book.title}</Link></h1>
-            {/* <p>{book.author}</p> */}
+            <Link to={`/books/${book.id}`}><img src={book.image} alt={book.title} /></Link>
           </div>
         ))}
       </ul>

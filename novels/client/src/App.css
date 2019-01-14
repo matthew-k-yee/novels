@@ -220,6 +220,8 @@ nav li a:visited{
 .bookList {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 65%;
+  margin: 0 auto;
 }
 
 .reviews{
@@ -238,4 +240,8 @@ nav li a:visited{
 
 .filtered-list a:visited{
   color:white
+}
+
+.book-covers-container{
+  place-self: center stretch
 }

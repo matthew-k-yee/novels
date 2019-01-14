@@ -10,7 +10,6 @@ function BookListItem(props){
         {props.books.map(book => (
           <div className='book-covers-container' key={book.id}>
             <Link to={`${match.url}/${book.id}`}><img className='book-covers' src={book.image} alt={props.title}/></Link>
-            {book.id > 4}
           </div>
         ))}
     </div>
