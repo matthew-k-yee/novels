@@ -130,8 +130,6 @@ class BookFullPage extends Component {
   }
 
   addToFavorites = async (e) => {
-    console.log('add')
-    console.log(this.state.books)
     let favorites = this.state.favorites
     favorites.push({
       books: this.state.books.title
@@ -140,6 +138,7 @@ class BookFullPage extends Component {
       favorites: favorites
     })
     console.log(favorites)
+
   }
 
   render() {

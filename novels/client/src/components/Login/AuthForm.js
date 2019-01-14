@@ -32,7 +32,6 @@ class AuthForm extends Component{
   async handlelogin(e){
     e.preventDefault();
     const tokenData = await login(this.state.credentials);
-    console.log(tokenData)
     localStorage.setItem('token', tokenData.jwt);
     this.setState({ redirectToProfile: true})
     console.log('loggedin')

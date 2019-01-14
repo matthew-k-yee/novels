@@ -4,7 +4,8 @@ class User < ApplicationRecord
 
   has_many :comments
   has_and_belongs_to_many :books
-  has_and_belongs_to_many :favorites, :join_table => "favorites", :class_name => "Book"
+  has_many :favorites
+
   def to_token_payload
       {
           sub: id,

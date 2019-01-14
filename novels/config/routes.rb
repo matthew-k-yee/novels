@@ -5,8 +5,12 @@ Rails.application.routes.draw do
 
   post 'user_token' => 'user_token#create'
 
+  # resources :users do
+  #   resources :favorite_books
+  # end
+
   resources :users do
-    resources :favorite_books
+    resources :favorites
   end
 
   resources :books do
@@ -14,10 +18,6 @@ Rails.application.routes.draw do
   end
 
   resources :comments
-
-  # resources :comments
-  #   resources :comments
-  # end
 
   resources :books do
     collection do

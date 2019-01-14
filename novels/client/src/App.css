@@ -39,8 +39,27 @@ nav ul {
 }
 
 nav li {
-  padding: 15px;
+  padding: 25px;
 }
+
+nav li a{
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+nav li  a:hover{
+  border-bottom: 3px solid #aaa;
+}
+
+nav li a:active{
+  border-bottom: 3px solid #aaa;
+}
+
+nav li a:visited{
+  color: black;
+}
+
 
 .genre-title {
   font-family: 'Shrikhand', cursive;
@@ -89,14 +108,14 @@ nav li {
   width: 90vh;
   background: white;
   opacity: .7;
-  height: 35vh;
+  height: 90vh;
 }
 
 .bookInFo-title{
   font-family: 'Shrikhand', cursive;
   text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
   color: white;
-  font-size: 10vh;
+  font-size: 7vh;
   font-weight: bold;
 }
 
@@ -198,6 +217,11 @@ nav li {
   color: white
 }
 
+.bookList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .reviews{
   background: white;
   width: 90vh;
@@ -212,15 +236,6 @@ nav li {
   padding-top: 20px;
 }
 
-/* .filtered-list{
-  bottom: 10px;
-  background:red
-} */
-
 .filtered-list a:visited{
   color:white
-}
-
-
-.genre-list{
 }

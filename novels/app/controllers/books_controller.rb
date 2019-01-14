@@ -10,7 +10,9 @@ class BooksController < ApplicationController
     else
       @books = Book.where(genre_id: params[:genre_id])
     end
+
     render json: @books
+
   end
 
   # GET /books/1
