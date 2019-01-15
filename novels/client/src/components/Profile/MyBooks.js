@@ -7,7 +7,7 @@ function MyBooks(props) {
         <div key={book.id}>
           <img src={book.image} alt={book.title}/>
           <br/>
-          <button>Remove</button>
+          <button onClick={() => {props.unFavorite(book.id)}}>Remove</button>
         </div>
       ))}
     </div>
