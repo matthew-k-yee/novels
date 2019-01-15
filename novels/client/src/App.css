@@ -254,3 +254,9 @@ nav li a:visited{
 .book-covers{
   height: 300px;
 }
+
+.profile{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-weight: bold;
+}

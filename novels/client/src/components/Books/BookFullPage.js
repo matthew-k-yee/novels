@@ -129,16 +129,28 @@ class BookFullPage extends Component {
     )
   }
 
+  //http://localhost:3001/users/1/books/
   addToFavorites = async (e) => {
     let favorites = this.state.favorites
     favorites.push({
       books: this.state.books.title
     })
-    this.setState({
-      favorites: favorites
+    const token = localStorage.getItem('token');
+    const resp = await axios.put(`/users/1/books/${this.state.id}`, {book: {
+      title: this.state.books.title,
+      summary: this.state.books.summary
+    }}, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    this.setState(prevState => {
+      return {
+        ...prevState.favorites
+      }
     })
-    console.log(favorites)
-
+    console.log('added')
+    console.log(this.state.favorites)
   }
 
   render() {
