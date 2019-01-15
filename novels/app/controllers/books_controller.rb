@@ -52,7 +52,14 @@ class BooksController < ApplicationController
 
   # DELETE /books/1
   def destroy
-    @book.destroy
+    if params[:user_id].present?
+      @fav_book = Book.find(params[:id])
+      current_user.books.delete(@fav_book)
+      render json: @fav_book
+    else
+      @book.destroy
+      render json: @book
+    end
   end
 
   private
