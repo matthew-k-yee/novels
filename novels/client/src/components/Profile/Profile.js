@@ -27,7 +27,7 @@ class Profile extends Component {
     console.log('logged out')
   }
 
-  getUsers = async(e) => {
+  getUsers = async() => {
     const resp = await axios.get(`users/1`)
     console.log(resp.data)
     this.setState({favorites: resp.data.books})
@@ -35,7 +35,7 @@ class Profile extends Component {
 
   unFavorite = async (id) => {
     const token = localStorage.getItem('token');
-    const resp = await axios.delete(`/users/1/books/1`, {
+    const resp = await axios.delete(`/users/1/books/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
