@@ -149,8 +149,6 @@ class BookFullPage extends Component {
         ...prevState.favorites
       }
     })
-    console.log('added')
-    console.log(this.state.favorites)
   }
 
   render() {

@@ -10,13 +10,14 @@ class Profile extends Component {
       books: [],
       users: [],
       favorites: [],
+      userId: 1,
       redirectToAuth: false
     })
     this.logOut = this.logOut.bind(this)
   }
 
   componentDidMount = async() => {
-    await this.getUsers()
+    await this.getUsers(this.state.userId)
   }
 
   logOut(e) {
@@ -27,9 +28,8 @@ class Profile extends Component {
     console.log('logged out')
   }
 
-  getUsers = async() => {
-    const resp = await axios.get(`users/1`)
-    console.log(resp.data)
+  getUsers = async(id) => {
+    const resp = await axios.get(`users/${id}`)
     this.setState({favorites: resp.data.books})
   }
 
@@ -45,11 +45,9 @@ class Profile extends Component {
         favorites: prevState.favorites.filter(book => book.id !== id)
       }
     })
-    console.log(this.state.favorites)
   }
 
   render() {
-    console.log(this.state.favorites)
     if (this.state.redirectToAuth || !localStorage.getItem('token')) {
       return (<Redirect to="/signin" />)
     }
